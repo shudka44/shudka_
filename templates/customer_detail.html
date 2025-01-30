@@ -1,0 +1,38 @@
+<!-- filepath: /c:/Users/Honor/Desktop/SHUDKA44/SHUDKA44/templates/customer_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Detail</title>
+</head>
+<body>
+    <h1>{{ customer.name }}</h1>
+    <p>Email: {{ customer.email }}</p>
+    <p>Phone: {{ customer.phone }}</p>
+    <p>Address: {{ customer.address }}</p>
+    <p>Debt: Ksh {{ customer.debt }}</p>
+
+    <h2>Purchases</h2>
+    <ul>
+        {% for purchase in purchases %}
+            <li>{{ purchase.product.name }} - Quantity: {{ purchase.quantity }} - Date: {{ purchase.purchase_date }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Payments</h2>
+    <ul>
+        {% for payment in payments %}
+            <li>Amount: Ksh {{ payment.amount }} - Date: {{ payment.payment_date }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Make a Payment</h2>
+    <form method="post" action="{% url 'make_payment' customer.id %}">
+        {% csrf_token %}
+        <label for="amount">Amount:</label>
+        <input type="number" step="0.01" name="amount" id="amount" required>
+        <button type="submit">Pay</button>
+    </form>
+</body>
+</html>
