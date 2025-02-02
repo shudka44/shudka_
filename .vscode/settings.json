@@ -1,0 +1,4 @@
+{
+    "cline.enableCheckpoints": true,
+    "application.experimental.rendererProfiling": true
+}

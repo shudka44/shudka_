@@ -1,5 +1,3 @@
-# filepath: /c:/Users/Honor/Desktop/SHUDKA44/SHUDKA44/SHUDKA44/settings.py
-
 import os
 import dj_database_url
 from pathlib import Path
@@ -11,12 +9,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.x/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '7789ba48102dd9e90cb0aca933868fca')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['your-render-app-name.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['shudka.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
